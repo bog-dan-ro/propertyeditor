@@ -1,0 +1,11 @@
+#!/bin/sh
+
+qmake -set PROPERTY_EDITOR_INSTALL_LIBS /usr/local/lib
+qmake -set PROPERTY_EDITOR_INSTALL_HEADERS /usr/local/include
+qmake -set PROPERTY_EDITOR_INSTALL_PLUGINS /usr/local/lib
+
+cd lib
+qmake && make -j2 && make install
+cd ../plugins
+qmake && make -j2 && make install
+ldconfig
