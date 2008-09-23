@@ -17,4 +17,4 @@ link_directories( "../../lib" )
 target_link_libraries(SizeProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS SizeProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS SizeProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")

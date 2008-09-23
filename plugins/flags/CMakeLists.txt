@@ -20,4 +20,4 @@ link_directories( "../../lib" )
 target_link_libraries(FlagsProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS FlagsProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS FlagsProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")

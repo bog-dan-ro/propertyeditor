@@ -19,4 +19,4 @@ link_directories( "../../lib" )
 target_link_libraries(PixmapProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS PixmapProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS PixmapProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")

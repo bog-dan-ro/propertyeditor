@@ -17,4 +17,4 @@ link_directories( "../../lib" )
 target_link_libraries(EnumsProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS EnumsProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS EnumsProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")

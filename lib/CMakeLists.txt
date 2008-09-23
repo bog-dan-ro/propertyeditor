@@ -13,6 +13,5 @@ set_target_properties(PropertyEditor PROPERTIES	VERSION ${PROPERTYEDITOR_VERSION
 
 target_link_libraries(PropertyEditor ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS PropertyEditor LIBRARY DESTINATION lib)
-install(FILES propertyeditor.h propertyinterface.h
- DESTINATION include COMPONENT Devel)
+install(TARGETS PropertyEditor ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(FILES propertyeditor.h propertyinterface.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)

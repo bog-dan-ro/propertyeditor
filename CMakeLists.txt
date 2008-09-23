@@ -16,7 +16,7 @@ set (PROPERTYEDITOR_VERSION "${PROPERTYEDITOR_VERSION_MAJOR}.${PROPERTYEDITOR_VE
 add_definitions (-DPROPERTYEDITOR_VERSION=\"${PROPERTYEDITOR_VERSION}\")
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" )
-
+find_package(Paths)
 find_package(Qt4 REQUIRED)
 
 set( QT_USE_QTGUI   TRUE )
@@ -26,6 +26,11 @@ include_directories(
         ${QT_INCLUDE_DIR}
         ${CMAKE_CURRENT_BINARY_DIR}
         )
+
+if (WIN32)
+  add_definitions(-DLIB_EXPORTS)
+endif(WIN32)
+
 add_subdirectory(lib)
 add_subdirectory(plugins)
 

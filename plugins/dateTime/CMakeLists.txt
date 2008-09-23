@@ -17,4 +17,4 @@ link_directories( "../../lib" )
 target_link_libraries(DateTimeProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS DateTimeProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS DateTimeProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")

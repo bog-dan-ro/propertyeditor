@@ -17,4 +17,4 @@ link_directories( "../../lib" )
 target_link_libraries(PenProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS PenProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS PenProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")

@@ -17,4 +17,4 @@ link_directories( "../../lib" )
 target_link_libraries(StringsProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS StringsProperty LIBRARY DESTINATION lib/propertyEditor)
+install(TARGETS StringsProperty DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
