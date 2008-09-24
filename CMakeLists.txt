@@ -16,16 +16,16 @@ set (PROPERTYEDITOR_VERSION "${PROPERTYEDITOR_VERSION_MAJOR}.${PROPERTYEDITOR_VE
 add_definitions (-DPROPERTYEDITOR_VERSION=\"${PROPERTYEDITOR_VERSION}\")
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" )
-find_package(Paths)
+include(SetPaths.cmake)
+
 find_package(Qt4 REQUIRED)
 
 set( QT_USE_QTGUI   TRUE )
 include( ${QT_USE_FILE} )
 include_directories(
-        ${CMAKE_CURRENT_SOURCE_DIR} 
+        ${CMAKE_CURRENT_SOURCE_DIR}
         ${QT_INCLUDE_DIR}
-        ${CMAKE_CURRENT_BINARY_DIR}
-        )
+        ${CMAKE_CURRENT_BINARY_DIR})
 
 if (WIN32)
   add_definitions(-DLIB_EXPORTS)
