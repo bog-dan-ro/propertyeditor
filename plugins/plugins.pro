@@ -17,4 +17,4 @@ SUBDIRS += numbers \
  pen \
  pixmap \
  bool \
- stringlist 
+ stringlist

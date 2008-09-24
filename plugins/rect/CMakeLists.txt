@@ -14,7 +14,7 @@ add_dependencies(RectProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(RectProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(RectProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS RectProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS RectProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)

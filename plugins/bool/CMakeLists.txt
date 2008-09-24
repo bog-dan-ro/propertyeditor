@@ -17,7 +17,7 @@ add_dependencies(BoolProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(BoolProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(BoolProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
 install(TARGETS BoolProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
