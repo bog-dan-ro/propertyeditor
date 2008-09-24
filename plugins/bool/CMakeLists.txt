@@ -20,4 +20,4 @@ link_directories( "../../lib" )
 target_link_libraries(BoolProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS BoolProperty DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS BoolProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
