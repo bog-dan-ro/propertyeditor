@@ -17,7 +17,7 @@ add_dependencies(FlagsProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(FlagsProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(FlagsProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS FlagsProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS FlagsProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)

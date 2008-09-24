@@ -15,7 +15,7 @@ add_dependencies(ColorProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(ColorProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(ColorProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS ColorProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS ColorProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)

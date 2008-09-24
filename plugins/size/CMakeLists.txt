@@ -14,7 +14,7 @@ add_dependencies(SizeProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(SizeProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(SizeProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS SizeProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS SizeProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)

@@ -14,7 +14,7 @@ add_dependencies(DateProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(DateProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(DateProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS DateProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS DateProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)

@@ -14,7 +14,7 @@ add_dependencies(StringsProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(StringsProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(StringsProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS StringsProperty DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS StringsProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)

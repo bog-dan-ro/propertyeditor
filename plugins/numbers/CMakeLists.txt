@@ -14,7 +14,7 @@ add_dependencies(NumbersProperty PropertyEditor)
 
 link_directories( "../../lib" )
 
-target_link_libraries(NumbersProperty PropertyEditor ${QT_QTGUI_LIBRARY} 
+target_link_libraries(NumbersProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS NumbersProperty  DESTINATION "${LIB_INSTALL_DIR}/propertyEditor")
+install(TARGETS NumbersProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
