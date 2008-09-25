@@ -2,7 +2,7 @@
 
 project(SizeProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Size_SRCS size.cpp)
 
@@ -12,7 +12,7 @@ add_library(SizeProperty SHARED ${Size_SRCS})
 
 add_dependencies(SizeProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(SizeProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

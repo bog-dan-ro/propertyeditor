@@ -2,7 +2,7 @@
 
 project(BoolProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Bool_SRCS bool.cpp)
 
@@ -15,7 +15,7 @@ add_library(BoolProperty SHARED ${Bool_SRCS})
 
 add_dependencies(BoolProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(BoolProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

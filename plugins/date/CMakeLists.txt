@@ -2,7 +2,7 @@
 
 project(DateProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Date_SRCS date.cpp)
 
@@ -12,7 +12,7 @@ add_library(DateProperty SHARED ${Date_SRCS})
 
 add_dependencies(DateProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(DateProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

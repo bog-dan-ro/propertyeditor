@@ -2,7 +2,7 @@
 
 project(BrushProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Brush_SRCS brush.cpp)
 
@@ -12,7 +12,7 @@ add_library(BrushProperty SHARED ${Brush_SRCS})
 
 add_dependencies(BrushProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(BrushProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

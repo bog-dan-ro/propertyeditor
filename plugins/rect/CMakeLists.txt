@@ -2,7 +2,7 @@
 
 project(RectProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Rect_SRCS rect.cpp)
 
@@ -12,7 +12,7 @@ add_library(RectProperty SHARED ${Rect_SRCS})
 
 add_dependencies(RectProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(RectProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

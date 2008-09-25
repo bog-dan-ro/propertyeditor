@@ -18,7 +18,7 @@
 #include "flagslist.h"
 
 FlagsList::FlagsList(QWidget* parent, Qt::WFlags fl)
-		: QDialog(parent, fl), Ui::Dialog()
+		: QDialog(parent, fl), Ui::flagsDialog()
 {
 	setupUi(this);
 	connect(checkAllButton, SIGNAL(pressed()), this, SLOT(checkAll()));

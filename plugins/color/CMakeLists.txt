@@ -2,7 +2,7 @@
 
 project(ColorProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Color_SRCS changecolor.cpp  color.cpp)
 
@@ -13,7 +13,7 @@ add_library(ColorProperty SHARED ${Color_SRCS})
 
 add_dependencies(ColorProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(ColorProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

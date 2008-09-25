@@ -2,7 +2,7 @@
 
 project(StringsProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Strings_SRCS strings.cpp)
 
@@ -12,7 +12,7 @@ add_library(StringsProperty SHARED ${Strings_SRCS})
 
 add_dependencies(StringsProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(StringsProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
