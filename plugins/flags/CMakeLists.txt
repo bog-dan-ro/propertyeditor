@@ -2,7 +2,7 @@
 
 project(FlagsProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Flags_SRCS flags.cpp  flagslist.cpp)
 
@@ -15,7 +15,7 @@ add_library(FlagsProperty SHARED ${Flags_SRCS})
 
 add_dependencies(FlagsProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(FlagsProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

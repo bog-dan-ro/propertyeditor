@@ -2,7 +2,7 @@
 
 project(RectfProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Rectf_SRCS rectf.cpp)
 
@@ -12,7 +12,7 @@ add_library(RectfProperty SHARED ${Rectf_SRCS})
 
 add_dependencies(RectfProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(RectfProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

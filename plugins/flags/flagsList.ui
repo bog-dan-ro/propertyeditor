@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog" >
+ <class>flagsDialog</class>
+ <widget class="QDialog" name="flagsDialog" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -91,7 +91,7 @@
   <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>flagsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -107,7 +107,7 @@
   <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>flagsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >

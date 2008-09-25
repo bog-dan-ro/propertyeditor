@@ -2,7 +2,7 @@
 
 project(EnumsProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Enums_SRCS enums.cpp)
 
@@ -12,7 +12,7 @@ add_library(EnumsProperty SHARED ${Enums_SRCS})
 
 add_dependencies(EnumsProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(EnumsProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

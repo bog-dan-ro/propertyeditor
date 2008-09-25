@@ -2,7 +2,7 @@
 
 project(FontProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Font_SRCS changefont.cpp  font.cpp  metricfontdialog.cpp)
 
@@ -14,7 +14,7 @@ add_library(FontProperty SHARED ${Font_SRCS})
 
 add_dependencies(FontProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(FontProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

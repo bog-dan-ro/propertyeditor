@@ -2,7 +2,7 @@
 
 project(NumbersProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Numbers_SRCS numbers.cpp)
 
@@ -12,7 +12,7 @@ add_library(NumbersProperty SHARED ${Numbers_SRCS})
 
 add_dependencies(NumbersProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(NumbersProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )

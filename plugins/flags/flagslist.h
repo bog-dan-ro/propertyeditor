@@ -20,7 +20,7 @@
 #include <QDialog>
 #include "ui_flagsList.h"
 
-class FlagsList : public QDialog, public Ui::Dialog
+class FlagsList : public QDialog, public Ui::flagsDialog
 {
 	Q_OBJECT
 

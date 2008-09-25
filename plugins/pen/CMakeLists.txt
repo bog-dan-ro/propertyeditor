@@ -2,7 +2,7 @@
 
 project(PenProperty)
 
-include_directories(BEFORE ../../lib )
+include_directories(BEFORE "${CMAKE_SOURCE_DIR}/lib" )
 
 set(Pen_SRCS pen.cpp)
 
@@ -12,7 +12,7 @@ add_library(PenProperty SHARED ${Pen_SRCS})
 
 add_dependencies(PenProperty PropertyEditor)
 
-link_directories( "../../lib" )
+link_directories( "${CMAKE_SOURCE_DIR}/lib" )
 
 target_link_libraries(PenProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
