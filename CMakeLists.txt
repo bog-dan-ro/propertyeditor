@@ -27,10 +27,6 @@ include_directories(
         ${QT_INCLUDE_DIR}
         ${CMAKE_CURRENT_BINARY_DIR})
 
-if (WIN32)
-  add_definitions(-DLIB_EXPORTS)
-endif(WIN32)
-
 add_subdirectory(lib)
 add_subdirectory(plugins)
 
