@@ -13,4 +13,4 @@ link_directories( "${CMAKE_BINARY_DIR}/lib" )
 target_link_libraries(RectProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS RectProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
+install(TARGETS RectProperty ${INSTALL_PLUGINS_DEFAULT_ARGS})

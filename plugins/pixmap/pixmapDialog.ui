@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog" >
+ <class>pixmapDialog</class>
+ <widget class="QDialog" name="pixmapDialog" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -76,7 +76,7 @@
   <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>pixmapDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -92,7 +92,7 @@
   <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>pixmapDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >

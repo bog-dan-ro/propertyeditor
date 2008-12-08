@@ -22,7 +22,7 @@
 
 #include "ui_pixmapDialog.h"
 
-class PixmapDialog : public QDialog, private Ui::Dialog
+class PixmapDialog : public QDialog, private Ui::pixmapDialog
 {
 	Q_OBJECT
 

@@ -14,4 +14,4 @@ link_directories( "${CMAKE_BINARY_DIR}/lib" )
 target_link_libraries(BrushProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS BrushProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
+install(TARGETS BrushProperty ${INSTALL_PLUGINS_DEFAULT_ARGS})
