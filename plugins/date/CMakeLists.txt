@@ -13,4 +13,4 @@ link_directories( "${CMAKE_BINARY_DIR}/lib" )
 target_link_libraries(DateProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS DateProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
+install(TARGETS DateProperty ${INSTALL_PLUGINS_DEFAULT_ARGS})

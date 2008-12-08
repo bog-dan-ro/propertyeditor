@@ -48,7 +48,7 @@
 #include "stringlisteditor.h"
 
 StringListEditor::StringListEditor(QWidget *parent)
-		: QDialog(parent), m_model(new QStringListModel(this))
+		: QDialog(parent), Ui::stringListDialog(), m_model(new QStringListModel(this))
 {
 	listView=0;
 	setupUi(this);

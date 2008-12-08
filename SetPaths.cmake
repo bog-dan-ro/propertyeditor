@@ -79,7 +79,7 @@ if (WIN32)
    set(LIBEXEC_INSTALL_DIR  "${BIN_INSTALL_DIR}"          ) # The subdirectory relative to the install prefix where libraries will be installed (default is ${BIN_INSTALL_DIR})
    set(INCLUDE_INSTALL_DIR  "include"                     ) # The subdirectory to the header prefix
 
-   set(PLUGIN_INSTALL_DIR       "lib${LIB_SUFFIX}/propertyEditor" ) #                "The subdirectory relative to the install prefix where plugins will be installed (default is ${LIB_INSTALL_DIR}/propertyEditor)
+   set(PLUGIN_INSTALL_DIR       "bin/propertyEditor" ) #                "The subdirectory relative to the install prefix where plugins will be installed (default is ${LIB_INSTALL_DIR}/propertyEditor)
    set(CONFIG_INSTALL_DIR       "share/config"            ) # The config file install dir
    set(DATA_INSTALL_DIR         "share/apps"              ) # The parent directory where applications can install their data
    set(HTML_INSTALL_DIR         "share/doc/HTML"          ) # The HTML install dir for documentation
@@ -201,6 +201,10 @@ set(INSTALL_TARGETS_DEFAULT_ARGS  RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
                                   LIBRARY DESTINATION "${LIB_INSTALL_DIR}"
                                   ARCHIVE DESTINATION "${LIB_INSTALL_DIR}" COMPONENT Devel )
 
+
+set(INSTALL_PLUGINS_DEFAULT_ARGS  RUNTIME DESTINATION "${BIN_INSTALL_DIR}/propertyEditor"
+                                  LIBRARY DESTINATION "${LIB_INSTALL_DIR}/propertyEditor"
+                                  ARCHIVE DESTINATION "${LIB_INSTALL_DIR}/propertyEditor" COMPONENT Devel )
 
 
 # on the Mac support an extra install directory for application bundles starting with cmake 2.6

@@ -15,4 +15,4 @@ link_directories( "${CMAKE_BINARY_DIR}/lib" )
 target_link_libraries(FlagsProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS FlagsProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
+install(TARGETS FlagsProperty ${INSTALL_PLUGINS_DEFAULT_ARGS})

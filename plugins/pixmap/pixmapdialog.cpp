@@ -19,7 +19,7 @@
 #include "pixmapdialog.h"
 
 PixmapDialog::PixmapDialog(QWidget* parent, Qt::WFlags fl)
-		: QDialog(parent, fl), Ui::Dialog()
+		: QDialog(parent, fl), Ui::pixmapDialog()
 {
 	setupUi(this);
 	QGraphicsScene * scene = new QGraphicsScene(this);

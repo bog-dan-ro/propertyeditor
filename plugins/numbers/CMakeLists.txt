@@ -13,4 +13,4 @@ link_directories( "${CMAKE_BINARY_DIR}/lib" )
 target_link_libraries(NumbersProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS NumbersProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
+install(TARGETS NumbersProperty ${INSTALL_PLUGINS_DEFAULT_ARGS})

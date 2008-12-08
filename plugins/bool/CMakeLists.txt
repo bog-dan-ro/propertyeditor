@@ -16,4 +16,4 @@ link_directories( "${CMAKE_BINARY_DIR}/lib" )
 target_link_libraries(BoolProperty PropertyEditor ${QT_QTGUI_LIBRARY}
         ${QT_QTCORE_LIBRARY} )
 
-install(TARGETS BoolProperty DESTINATION "${PLUGIN_INSTALL_DIR}" RUNTIME)
+install(TARGETS BoolProperty ${INSTALL_PLUGINS_DEFAULT_ARGS})
