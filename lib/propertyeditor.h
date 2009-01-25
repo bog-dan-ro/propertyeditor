@@ -58,6 +58,9 @@ private:
 	QList<PropertyInterface*> m_plugins;
 	PropertyModel* m_model;
 	PropertyDelegate* m_delegate;
+
+signals:
+	void propertyChanged(QObject * obj, const QString & propertyName, const QVariant & old_value, const QVariant & new_value);
 };
 
 }
