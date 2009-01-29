@@ -55,6 +55,7 @@ void PropertyModel::refreshProperties()
 					if (plugin->canHandle(m_object, i))
 					{
 						PropertyInterface* pi=plugin->createInstance(m_object, i, this);
+						connect(pi,SIGNAL(propertyChanged(QObject*,QString,QVariant,QVariant)), QObject::parent(), SIGNAL(propertyChanged(QObject*,QString,QVariant,QVariant)));
 						m_createdProperties.push_back(pi);
 						m_properties.push_back(pi);
 						break;

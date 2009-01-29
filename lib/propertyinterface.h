@@ -79,6 +79,9 @@ public:
 
 	virtual PropertyInterface* property(int prop) const;
 
+signals:
+	void propertyChanged(QObject * obj, const QString & propertyName, const QVariant & old_value, const QVariant & new_value);
+
 private:
 	QModelIndex  m_parentIndex;
 	QObject * m_object;

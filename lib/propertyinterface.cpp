@@ -60,7 +60,11 @@ QVariant PropertyInterface::value()
 
 bool PropertyInterface::setValue(QVariant data)
 {
-	return object()->setProperty(object()->metaObject()->property(objectProperty()).name(), data);
+	QVariant old_data=object()->property(object()->metaObject()->property(objectProperty()).name());
+	bool ret=object()->setProperty(object()->metaObject()->property(objectProperty()).name(), data);
+	if (ret)
+		emit(propertyChanged(object(), QString(object()->metaObject()->property(objectProperty()).name()), old_data, data));
+	return ret;
 }
 
 QObject * PropertyInterface::object()
