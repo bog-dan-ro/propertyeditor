@@ -91,6 +91,21 @@ PropertyEditor::~PropertyEditor()
 {
 }
 
+void PropertyEditor::setValidator(QVariant::Type type, PropertyValidator * validator)
+{
+	m_validators[type]=validator;
+}
+
+PropertyValidator* PropertyEditor::validator(QVariant::Type type)
+{
+	return m_validators[type];
+}
+
+void PropertyEditor::clearValidators()
+{
+	m_validators.clear();
+}
+
 void PropertyEditor::setObject(QObject * object)
 {
 	if (object == m_object)

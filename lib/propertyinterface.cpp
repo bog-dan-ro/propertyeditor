@@ -29,13 +29,14 @@
 
 #include "propertyinterface.h"
 #include "propertymodel.h"
+#include "propertyeditor.h"
 #include <QMetaProperty>
 #include <QMetaEnum>
 
 namespace PropertyEditor
 {
 
-PropertyInterface::PropertyInterface(QObject *parent , QObject * object, int property, const PropertyModel * /*pm*/): QObject(parent)
+PropertyInterface::PropertyInterface(QObject *parent , QObject * object, int property, const PropertyModel * pm): QObject(parent),m_propertyModel(pm)
 {
 	setObject(object);
 	setObjectProperty(property);
@@ -80,6 +81,13 @@ bool PropertyInterface::setValue(QVariant data)
 	return ret;
 }
 
+PropertyValidator* PropertyInterface::validator(QVariant::Type type)
+{
+	if (dynamic_cast<PropertyEditor*>(m_propertyModel->parent()))
+		return dynamic_cast<PropertyEditor*>(m_propertyModel->parent())->validator(type);
+	return 0;
+}
+
 QObject * PropertyInterface::object()
 {
 	return m_object;
@@ -93,6 +101,11 @@ void PropertyInterface::setObjectProperty(int property)
 int PropertyInterface::objectProperty()
 {
 	return m_property;
+}
+
+QString PropertyInterface::objectPropertyName()
+{
+	return object()->metaObject()->property(objectProperty()).name();
 }
 
 PropertyInterface::~PropertyInterface()
