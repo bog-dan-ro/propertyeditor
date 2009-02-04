@@ -45,6 +45,7 @@
 #define KONTAMABIL_EXPORTS
 #endif
 
+#include "propertyvalidator.h"
 
 class QWidget;
 class QMetaProperty;
@@ -68,6 +69,7 @@ public:
 
 	virtual void setObjectProperty(int property);
 	virtual int objectProperty();
+	virtual QString objectPropertyName();
 
 	virtual QWidget* createEditor(QWidget * parent, const QModelIndex & index) = 0;
 
@@ -80,6 +82,7 @@ public:
 	bool setValue(QVariant data);
 
 	void refreshPropertis(const PropertyModel * pm);
+	PropertyValidator* validator(QVariant::Type type);
 
 	virtual bool canHandle(QObject * object, int property) const = 0;
 	virtual PropertyInterface* createInstance(QObject * object, int property, const PropertyModel * propertyModel) const = 0;
@@ -100,6 +103,7 @@ private:
 	QObject * m_object;
 	QList<PropertyInterface*> m_properties;
 	int m_property;
+	const QObject * m_propertyModel;
 };
 
 }

@@ -44,6 +44,12 @@ QWidget* Strings::createEditor(QWidget * parent, const QModelIndex & index)
 {
 	Q_UNUSED(index);
 	QLineEdit *le = new QLineEdit(parent);
+	if (validator(QVariant::String))
+	{
+		validator(QVariant::String)->setObject(object());
+		validator(QVariant::String)->setProperty(objectPropertyName());
+		le->setValidator(validator(QVariant::String));
+	}
 	le->setText(value().toString());
 	connect(le, SIGNAL(textChanged(const QString&)), this, SLOT(setValue(const QString&)));
 	return le;
