@@ -3,6 +3,12 @@
 cmake_minimum_required(VERSION 2.6)
 project(propertyEditor-package)
 
+# please choose between GPL or LGPL license
+set (PROPERTYEDITOR_LICENSE "GPL")
+
+message("*** propertyEditor use ${PROPERTYEDITOR_LICENSE} license ***")
+
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 #set(CMAKE_VERBOSE_MAKEFILE ON)
