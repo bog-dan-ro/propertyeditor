@@ -35,12 +35,12 @@
 
 #ifdef WIN32
 #ifdef LIB_EXPORTS
-#define KONTAMABIL_EXPORTS __declspec(dllexport)
+#define PROPERTYEDITOR_EXPORTS __declspec(dllexport)
 #else
-#define KONTAMABIL_EXPORTS __declspec(dllimport)
+#define PROPERTYEDITOR_EXPORTS __declspec(dllimport)
 #endif
 #else
-#define KONTAMABIL_EXPORTS
+#define PROPERTYEDITOR_EXPORTS
 #endif
 
 namespace PropertyEditor
@@ -49,7 +49,7 @@ namespace PropertyEditor
 class PropertyInterface;
 class PropertyModel;
 class PropertyDelegate;
-class KONTAMABIL_EXPORTS PropertyEditor : public QTreeView
+class PROPERTYEDITOR_EXPORTS PropertyEditor : public QTreeView
 {
 	Q_OBJECT
 
