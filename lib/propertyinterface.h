@@ -37,12 +37,12 @@
 
 #ifdef WIN32
 #ifdef LIB_EXPORTS
-#define KONTAMABIL_EXPORTS __declspec(dllexport)
+#define PROPERTYEDITOR_EXPORTS __declspec(dllexport)
 #else
-#define KONTAMABIL_EXPORTS __declspec(dllimport)
+#define PROPERTYEDITOR_EXPORTS __declspec(dllimport)
 #endif
 #else
-#define KONTAMABIL_EXPORTS
+#define PROPERTYEDITOR_EXPORTS
 #endif
 
 #include "propertyvalidator.h"
@@ -53,7 +53,7 @@ class QMetaProperty;
 namespace PropertyEditor
 {
 class PropertyModel;
-class KONTAMABIL_EXPORTS PropertyInterface: public QObject
+class PROPERTYEDITOR_EXPORTS PropertyInterface: public QObject
 {
 	Q_OBJECT
 
