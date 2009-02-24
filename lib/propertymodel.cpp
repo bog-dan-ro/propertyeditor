@@ -31,6 +31,7 @@
 #include <QMetaEnum>
 #include <QSize>
 #include <QFontMetrics>
+#include <QDebug>
 
 #include "propertymodel.h"
 #include "propertyinterface.h"
@@ -147,7 +148,7 @@ bool PropertyModel::setData(const QModelIndex &index, const QVariant &value, int
 
 QModelIndex PropertyModel::parent(const QModelIndex & index) const
 {
-	if (index.isValid())
+	if (index.isValid() && index.column()==0)
 		return reinterpret_cast<PropertyInterface*>(index.internalPointer())->parentIndex(index);
 	return QModelIndex();
 }
