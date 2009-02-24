@@ -92,6 +92,7 @@ void PropertyModel::setObject(QObject * object)
 {
 	m_object = object;
 	refreshProperties();
+	reset();
 }
 
 QModelIndex PropertyModel::index(int row, int column, const QModelIndex & parent) const
@@ -105,7 +106,8 @@ QModelIndex PropertyModel::index(int row, int column, const QModelIndex & parent
 	}
 	if (row >= m_properties.size())
 		return QModelIndex();
-	m_properties[row]->setParentIndex(parent);
+	if (0==column)
+		m_properties[row]->setParentIndex(parent);
 	return createIndex(row, column, m_properties[row]);
 }
 
@@ -147,7 +149,7 @@ bool PropertyModel::setData(const QModelIndex &index, const QVariant &value, int
 
 QModelIndex PropertyModel::parent(const QModelIndex & index) const
 {
-	if (index.isValid() && index.column()==0)
+	if (index.isValid())
 		return reinterpret_cast<PropertyInterface*>(index.internalPointer())->parentIndex(index);
 	return QModelIndex();
 }
