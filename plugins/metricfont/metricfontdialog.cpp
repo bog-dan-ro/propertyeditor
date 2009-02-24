@@ -98,8 +98,9 @@ void MetricFontDialog::updateLists()
 	m_fontStyleModel.setStringList(m_fontDatabase.styles(m_font.family()));
 	m_styleSelectionModel->clearSelection();
 	if (m_fontDatabase.styles(m_font.family()).size())
+		m_styleSelectionModel->setCurrentIndex(m_fontStyleModel.index(m_fontDatabase.styles(m_font.family()).indexOf(m_fontDatabase.styleString(m_font)),0), QItemSelectionModel::SelectCurrent);
+	if (!m_styleSelectionModel->currentIndex().isValid())
 		m_styleSelectionModel->setCurrentIndex(m_fontStyleModel.index(0,0), QItemSelectionModel::SelectCurrent);
-
 	QStringList wsl;
 	foreach(QFontDatabase::WritingSystem ws, m_fontDatabase.writingSystems(m_font.family()))
 		wsl.push_back(QFontDatabase::writingSystemName(ws));
