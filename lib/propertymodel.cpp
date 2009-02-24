@@ -31,7 +31,6 @@
 #include <QMetaEnum>
 #include <QSize>
 #include <QFontMetrics>
-#include <QDebug>
 
 #include "propertymodel.h"
 #include "propertyinterface.h"
