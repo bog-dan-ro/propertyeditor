@@ -35,6 +35,7 @@ include_directories(
 
 add_subdirectory(lib)
 add_subdirectory(plugins)
+add_subdirectory(examples)
 
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"

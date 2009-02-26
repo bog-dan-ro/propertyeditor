@@ -108,15 +108,12 @@ void PropertyEditor::clearValidators()
 
 void PropertyEditor::setObject(QObject * object)
 {
-	if (object == m_object)
-		return;
+/*	if (object == m_object)
+		return;*/
 	m_object = object;
 	if (m_model)
-	{
-		setModel(0);
 		m_model->setObject(object);
-		setModel(m_model);
-	}
+	emit(objectChanged(object));
 }
 
 QObject *PropertyEditor::object() const
