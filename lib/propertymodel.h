@@ -67,6 +67,8 @@ public:
 
 	PropertyInterface* createPropery(QObject* object, int property) const;
 
+	void resetModel();
+
 private:
 	void clearCreatedProperties();
 

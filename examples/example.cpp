@@ -16,6 +16,7 @@
 
 
 #include <QApplication>
+#include <QDebug>
 
 #include "propertyeditor.h"
 
@@ -25,5 +26,6 @@ int main(int argc, char **argv)
 	PropertyEditor::PropertyEditor pe;
 	pe.setObject(&pe);
 	pe.show();
+	qDebug()<<"Run this example after you install it";
         return app.exec();
 }
