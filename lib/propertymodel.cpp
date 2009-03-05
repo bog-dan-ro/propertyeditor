@@ -95,6 +95,11 @@ void PropertyModel::setObject(QObject * object)
 	reset();
 }
 
+void PropertyModel::resetModel() 
+{
+	reset();
+}
+
 QModelIndex PropertyModel::index(int row, int column, const QModelIndex & parent) const
 {
 	if (parent.isValid())

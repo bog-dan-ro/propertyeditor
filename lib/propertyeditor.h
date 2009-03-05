@@ -67,6 +67,7 @@ private:
 
 public slots:
 	void setObject(QObject * object);
+	void resetProperties();
 
 private:
 	QObject *m_object;
