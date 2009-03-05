@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.6)
 project(propertyEditor-package)
 
 # please choose between GPL or LGPL license
-set (PROPERTYEDITOR_LICENSE "GPL")
+set (PROPERTYEDITOR_LICENSE "LGPL")
 
 message("*** propertyEditor use ${PROPERTYEDITOR_LICENSE} license ***")
 
