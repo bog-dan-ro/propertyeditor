@@ -1,0 +1,28 @@
+Source: propertyeditor
+Section: libs
+Priority: extra
+Maintainer: BogDan Vatra <bogdan@licentia.eu>
+Build-Depends: cdbs, debhelper (>= 7), cmake, libqt4-dev
+Standards-Version: 3.8.1
+Homepage: http://code.google.com/p/propertyeditor
+
+Package: libpropertyeditor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A property editor for qt4.
+
+Package: libpropertyeditor-dev
+Architecture: any
+Depends: libpropertyeditor (= ${binary:Version})
+Description: A property editor for qt4.
+
+Package: propertyeditor-plugins
+Architecture: any
+Depends: libpropertyeditor (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: A property editor for qt4.
+
+Package: propertyeditor
+Architecture: any
+Depends: libpropertyeditor (= ${binary:Version}), propertyeditor-plugins (= ${binary:Version})
+Description: A property editor for qt4.
+
