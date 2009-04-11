@@ -1,0 +1,3 @@
+usr/include/*
+usr/lib/libPropertyEditor.so
+usr/share/cmake-2.6/Modules/FindPropertyEditor.cmake
