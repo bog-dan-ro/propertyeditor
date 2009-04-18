@@ -43,7 +43,7 @@ QWidget* Pixmap::createEditor(QWidget * parent, const QModelIndex & index)
 {
 	Q_UNUSED(index);
 	QPushButton *pb = new QPushButton(parent);
-	pb->setText(tr("Choose a image"));
+	pb->setText(tr("Choose an image"));
 	connect(pb, SIGNAL(clicked()), this, SLOT(chooseClicked()));
 	return pb;
 }
