@@ -38,6 +38,10 @@
 #include "propertymodel.h"
 #include "propertydelegate.h"
 
+#ifndef LIB_INSTALL_DIR
+    #define LIB_INSTALL_DIR "../lib"
+#endif
+
 namespace PropertyEditor
 {
 
@@ -71,7 +75,7 @@ void PropertyEditor::loadPlugins()
 		pluginsDir.cd("PlugIns");
 	}
 #else
-	pluginsDir.cd("../lib");
+	pluginsDir.cd(LIB_INSTALL_DIR);
 #endif
 	pluginsDir.cd("propertyEditor");
 
