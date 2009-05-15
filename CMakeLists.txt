@@ -24,6 +24,21 @@ add_definitions (-DPROPERTYEDITOR_VERSION=\"${PROPERTYEDITOR_VERSION}\")
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" )
 include(SetPaths.cmake)
 
+IF(APPLE)
+    IF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
+        IF(EXISTS /Developer/SDKs/MacOSX10.5.sdk OR EXISTS /SDKs/MacOSX10.5.sdk)
+            SET(CMAKE_OSX_ARCHITECTURES "ppc;i386;ppc64;x86_64" CACHE STRING "Build architectures for OSX" FORCE)
+            SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility-inlines-hidden" CACHE STRING "Flags used by the compiler during all build types." FORCE)
+        ELSE(EXISTS /Developer/SDKs/MacOSX10.5.sdk OR EXISTS /SDKs/MacOSX10.5.sdk)
+            IF(EXISTS /Developer/SDKs/MacOSX10.4u.sdk OR EXISTS /SDKs/MacOSX10.4u.sdk)
+                SET(CMAKE_OSX_ARCHITECTURES "ppc;i386" CACHE STRING "Build architectures for OSX" FORCE)
+                SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility-inlines-hidden" CACHE STRING "Flags used by the compiler during all build types." FORCE)
+           ENDIF(EXISTS /Developer/SDKs/MacOSX10.4u.sdk OR EXISTS /SDKs/MacOSX10.4u.sdk)
+        ENDIF(EXISTS /Developer/SDKs/MacOSX10.5.sdk OR EXISTS /SDKs/MacOSX10.5.sdk)
+        message("Build architectures for OSX:${CMAKE_OSX_ARCHITECTURES}")
+    ENDIF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
+ENDIF(APPLE)
+
 find_package(Qt4 REQUIRED)
 
 set( QT_USE_QTGUI   TRUE )
@@ -48,3 +63,11 @@ ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
 install(FILES cmake/modules/FindPropertyEditor.cmake DESTINATION ${CMAKE_ROOT}/Modules COMPONENT Devel)
+
+# This needs to be run very last so other parts of the scripts can take
+# advantage of this.
+IF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
+    SET(PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE 1 CACHE INTERNAL "Flag to track whether this is the first time running CMake or if CMake has been configured before")
+ENDIF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
+
+
