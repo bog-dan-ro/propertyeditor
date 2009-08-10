@@ -10,8 +10,8 @@ if (WIN32)
 endif(WIN32)
 
 add_library(PropertyEditor SHARED ${PE_SRCS})
-set_target_properties(PropertyEditor PROPERTIES	VERSION ${PROPERTYEDITOR_VERSION}
-                                        SOVERSION ${PROPERTYEDITOR_VERSION})
+set_target_properties(PropertyEditor PROPERTIES	SOVERSION "${PROPERTYEDITOR_VERSION_MAJOR}.${PROPERTYEDITOR_VERSION_MINOR}"
+                                                VERSION ${PROPERTYEDITOR_VERSION})
 target_link_libraries(PropertyEditor ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} )
 
 install(TARGETS PropertyEditor ${INSTALL_TARGETS_DEFAULT_ARGS} )
