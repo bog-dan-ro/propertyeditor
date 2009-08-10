@@ -10,19 +10,32 @@ Package: libpropertyeditor
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: A property editor for qt4.
+    This package contains propertyeditor shared library
+
+Package: libpropertyeditor-dbg
+Section: libs
+Architecture: any
+Priority: extra
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Debugging symbols for propertyeditor library.
+ This package contains debugging files used to investigate problems with
+ propertyeditor library.
 
 Package: libpropertyeditor-dev
 Architecture: any
+Section: libdevel
 Depends: libpropertyeditor (= ${binary:Version})
-Description: A property editor for qt4.
+Description: propertyeditor development files
+    This package contains development files for propertyeditor.
 
 Package: propertyeditor-plugins
 Architecture: any
 Depends: libpropertyeditor (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: A property editor for qt4.
+Description: propertyeditor plugins
+    This package contains plugins for propertyeditor.
 
 Package: propertyeditor
 Architecture: any
 Depends: libpropertyeditor (= ${binary:Version}), propertyeditor-plugins (= ${binary:Version})
 Description: A property editor for qt4.
-
+  This package is a dummy package which will install libpropertyeditor, propertyeditor-plugins for you.
